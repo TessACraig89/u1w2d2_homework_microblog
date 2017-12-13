@@ -1,29 +1,45 @@
-// empty madePosts array for <li> of madePosts
-
 //get and store postBox value
+//get and store posts li
+//get and store postButton
 
-//function that pushes post into allposts array
-	//push postBox value to madePosts array
+// make empty madePosts array for <li> of madePosts
 
-//get postButton and addEventListener 'click'
-//'click' triggers push to posts array fuction
+//postButton. addEventListener 'click'
+//'click' triggers function that pushes postBox value into front of madePosts array using unshift
+	//then sets postBox value to null
+	//then call publishPost
+
+//publishPost function
+	//make new list element and store as liElement
+	//take madePosts[i] and store in content variable
+	//liElement append content
+	//unshift liElement to posts
+
+let postBoxValue = document.getElementById('postBox').value;
+
+const postButton = document.getElementById('postButton')
+
+let posts = document.getElementById('posts')
+
+let madePosts = [];
 
 
-//function that that posts each madePosts[i] to the page seperately
+postButton.addEventListener('click', pushToArray = () => {
+	madePosts.unshift(postBoxValue);
+	postBoxValue = null;
+	publishPost();
+})
 
-//function that clears the postBox after
 
-const madePosts = [];
-
-const postBoxValue = document.getElementById('postBox').value
-
-const pushToArray = () => {
-	madePosts.push(postBoxValue);
+const publishPost = () => {
+	let liElement= document.createElement('LI');
+	let content = madePosts[0]
+	liElement.append(content);
+	posts.appendChild(liElement);
 }
+	let liElement = document.createElement('LI');
+	let content = madePosts[0]
+	liElement.append(content);
+	posts.appendChild(liElement);
 
-document.getElementById('postButton').addEventListener('click', pushToArray();)
-
-
-const makePost = () => {
-
-}
+//I don't know why undefined is the first list item and I want to unshift the liElement into posts but it won't work so I'm resorting to appendChild

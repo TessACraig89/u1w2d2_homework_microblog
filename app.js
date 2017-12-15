@@ -12,6 +12,7 @@
 	//create list element
 	//let content start with 0 post
 		//appendchild liElement to posts array to add to the page
+    //insetBefore new list element to the first index[0] of posts ul
 const postButton = document.getElementById('postButton')
 
 let posts = document.getElementById('posts')
@@ -31,4 +32,5 @@ const publishPost = () => {
     let content = madePosts[0];
     liElement.append(content);
     posts.appendChild(liElement);
+    posts.insertBefore(liElement, posts.childNodes[0])
 }
